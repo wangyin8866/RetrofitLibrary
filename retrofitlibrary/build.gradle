@@ -49,16 +49,16 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 //项目主页
-def siteUrl = 'https://github.com/wangyin8866/wangyin8866.github.io'    // project homepage
+def siteUrl = 'https://github.com/wangyin8866/RetrofitLibrary'    // project homepage
 //项目的版本控制地址
-def gitUrl = 'https://github.com/wangyin8866/wangyin8866.github.io.git' // project git
+def gitUrl = 'https://github.com/wangyin8866/RetrofitLibrary.git' // project git
 
 //发布到组织名称名字，必须填写
 group = "cn.wyman.wangyin"
 //发布到JCenter上的项目名字，必须填写
 def libName = "retrofit_library"
 // 版本号，下次更新是只需要更改版本号即可
-version = "1.1"
+version = "1.2"
 /**  上面配置后上传至jcenter后的编译路径是这样的： compile 'cn.wyman.wangyin:swipemenuview:1.0'  **/
 
 //生成源文件
@@ -74,7 +74,7 @@ task javadoc(type: Javadoc) {
     options.charSet 'UTF-8'
     options.author true
     options.version true
-    options.links "https://github.com/linglongxin24/FastDev/tree/master/mylibrary/docs/javadoc"
+    options.links "https://github.com/wangyin8866/RetrofitLibrary"
     failOnError false
 }
 
@@ -102,12 +102,12 @@ install {
         pom {
             project {
                 packaging 'aar'
-                name 'This is a lightweight swipemenuview framework'
+                name 'This is a lightweight retrofit framework'
                 url siteUrl
                 licenses {
                     license {
-                        name 'This is a lightweight swipemenuview framework'
-                        url 'https://github.com/wangyin8866/RefreshRecycleView'
+                        name 'This is a lightweight retrofit framework'
+                        url 'https://github.com/wangyin8866/RetrofitLibrary'
                     }
                 }
                 developers {
@@ -137,7 +137,7 @@ bintray {
     pkg {
         repo = "maven"
         name = libName    //发布到JCenter上的项目名字，必须填写
-        desc = 'This is a lightweight swipemenuview framework'    //项目描述
+        desc = 'This is a lightweight retrofit framework'    //项目描述
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]

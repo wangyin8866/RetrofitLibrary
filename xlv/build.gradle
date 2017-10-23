@@ -1,13 +1,12 @@
 apply plugin: 'com.android.library'
 
-
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
 
@@ -27,21 +26,8 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:26.+'
     testCompile 'junit:junit:4.12'
-
-    //支持字符串
-    compile 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
-
-    //compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'官方的日志拦截
-    //三个版本一致
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-
-
-    compile 'com.google.code.gson:gson:2.7'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
 }
 /** 以下开始是将Android Library上传到jcenter的相关配置**/
 
@@ -49,17 +35,17 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 //项目主页
-def siteUrl = 'https://github.com/wangyin8866/RetrofitLibrary'    // project homepage
+def siteUrl = 'https://github.com/wangyin8866/xlistView'    // project homepage
 //项目的版本控制地址
-def gitUrl = 'https://github.com/wangyin8866/RetrofitLibrary.git' // project git
+def gitUrl = 'https://github.com/wangyin8866/xlistView.git' // project git
 
 //发布到组织名称名字，必须填写
 group = "cn.wyman.wangyin"
 //发布到JCenter上的项目名字，必须填写
-def libName = "retrofit_library"
+def libName = "xlistView"
 // 版本号，下次更新是只需要更改版本号即可
-version = "1.3"
-/**  上面配置后上传至jcenter后的编译路径是这样的： compile 'cn.wyman.wangyin:swipemenuview:1.0'  **/
+version = "1.2"
+/**  上面配置后上传至jcenter后的编译路径是这样的： compile 'cn.wyman.wangyin:xlistView:1.0'  **/
 
 //生成源文件
 task sourcesJar(type: Jar) {
@@ -74,7 +60,7 @@ task javadoc(type: Javadoc) {
     options.charSet 'UTF-8'
     options.author true
     options.version true
-    options.links "https://github.com/wangyin8866/RetrofitLibrary"
+    options.links "https://github.com/wangyin8866/xlistView"
     failOnError false
 }
 
@@ -106,8 +92,8 @@ install {
                 url siteUrl
                 licenses {
                     license {
-                        name 'This is a lightweight retrofit framework'
-                        url 'https://github.com/wangyin8866/RetrofitLibrary'
+                        name 'This is a lightweight xlistView framework'
+                        url 'https://github.com/wangyin8866/xlistView'
                     }
                 }
                 developers {
@@ -137,7 +123,7 @@ bintray {
     pkg {
         repo = "maven"
         name = libName    //发布到JCenter上的项目名字，必须填写
-        desc = 'This is a lightweight retrofit framework'    //项目描述
+        desc = 'This is a lightweight xlistView framework'    //项目描述
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
